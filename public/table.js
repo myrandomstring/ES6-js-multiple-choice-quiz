@@ -22,7 +22,7 @@ function Table(id,classname)
 
 Table.prototype.startrow = function(id,classname,datasets)
 {
-	var tr = document.createElement("tr");
+	let tr = document.createElement("tr");
 
 	if(id)
 	{
@@ -36,7 +36,7 @@ Table.prototype.startrow = function(id,classname,datasets)
 
 	if(datasets !== undefined)
 	{
-		for(var prop in datasets)
+		for(let prop in datasets)
 		{
 			tr.dataset[prop] = datasets[prop];
 		}
@@ -49,7 +49,7 @@ Table.prototype.startrow = function(id,classname,datasets)
 
 Table.prototype.addcell = function(content,rownum)
 {
-	var td = document.createElement("td");
+	let td = document.createElement("td");
 
 	if(this.mouseEnterHandler)
 	{
@@ -70,12 +70,12 @@ Table.prototype.addcell = function(content,rownum)
 		td.appendChild(content);
 	}
 
-	for(var att in this.cellattributes)
+	for(let att in this.cellattributes)
 	{
 		td[att] = this.cellattributes[att];
 	}
 
-	for(var prop in this.cellstyle)
+	for(let prop in this.cellstyle)
 	{
 		td.style[prop] = this.cellstyle[prop];
 	}
