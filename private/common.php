@@ -3,7 +3,7 @@ define("DBHOST","mysql:host=localhost;");
 define("DBNAME","dbname=quiz");
 
 define("STORED_PROC_USER","user");
-define("STORED_PROC_PWD","7T5e1&5fRs");
+define("STORED_PROC_PWD","YOURPASSWORD");
 
 define("DBERROR","an error occured");
 define("ERROR","an error occured");
