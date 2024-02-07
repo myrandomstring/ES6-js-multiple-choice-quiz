@@ -1,22 +1,23 @@
-Table.prototype.constructor = Table;
-
-function Table(id,classname)
+class Table
 {
-	this.table = document.createElement("table");
-	this.cellattributes = {};
-	this.cellstyle = {};	
-	this.rows = [];
-	this.mouseEnterHandler = null;
-	this.mouseLeaveHandler = null;
+	constructor(id,classname)
+	{
+		this.table = document.createElement("table");
+		this.cellattributes = {};
+		this.cellstyle = {};	
+		this.rows = [];
+		this.mouseEnterHandler = null;
+		this.mouseLeaveHandler = null;
 
-	if(classname)
-	{
-		this.table.className = classname;
-	}
-	
-	if(id)
-	{
-		this.table.id = id;
+		if(classname)
+		{
+			this.table.className = classname;
+		}
+		
+		if(id)
+		{
+			this.table.id = id;
+		}
 	}
 }
 

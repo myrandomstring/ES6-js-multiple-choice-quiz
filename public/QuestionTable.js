@@ -1,42 +1,42 @@
-QuestionTable.prototype = Object.create(Table.prototype);
-QuestionTable.prototype.constructor = QuestionTable;
-
-function QuestionTable(data)
+class QuestionTable extends Table
 {
-	Table.call(this);
-	this.table.setAttribute('id','questiontable');
-	this.rowindex = data.rowindex;
-	this.selected = 0;
-
-	let labels = ["question","answer1","answer2","answer3","answer4"];
-
-	for (let i=0 ; i<labels.length ; i++)
+	constructor(data)
 	{
-		let rn = this.startrow();
+		super(data)	
+		this.table.setAttribute('id','questiontable');
+		this.rowindex = data.rowindex;
+		this.selected = 0;
 
-		let ib = document.createElement("input");	
-		ib.type = "text";
-		ib.id = labels[i];
+		let labels = ["question","answer1","answer2","answer3","answer4"];
 
-		ib.value = data[labels[i]];
-		ib.readOnly = true;
-		
-		this.addcell(ib,rn);
-		this[labels[i]] = ib;
-		
-		if (i > 0)
+		for (let i=0 ; i<labels.length ; i++)
 		{
-			let rb = document.createElement("input");
-			let rbid = 'rb'+i;
+			let rn = this.startrow();
 
-			rb.setAttribute('id',rbid);
-			rb.setAttribute('type','radio');
-			rb.setAttribute('name','answer');
-			rb.dataset.selected = labels[i]
-			rb.addEventListener("click",this.radioselected.bind(this),false);	
+			let ib = document.createElement("input");	
+			ib.type = "text";
+			ib.id = labels[i];
 
-			this.addcell(rb,rn);
-			this[rbid] = rb;
+			ib.value = data[labels[i]];
+			ib.readOnly = true;
+			
+			this.addcell(ib,rn);
+			this[labels[i]] = ib;
+			
+			if (i > 0)
+			{
+				let rb = document.createElement("input");
+				let rbid = 'rb'+i;
+
+				rb.setAttribute('id',rbid);
+				rb.setAttribute('type','radio');
+				rb.setAttribute('name','answer');
+				rb.dataset.selected = labels[i]
+				rb.addEventListener("click",this.radioselected.bind(this),false);	
+
+				this.addcell(rb,rn);
+				this[rbid] = rb;
+			}
 		}
 	}
 }

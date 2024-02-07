@@ -1,8 +1,9 @@
-SaveDeleteState.prototype.constructor = SaveDeleteState;
-
-function SaveDeleteState()
+class SaveDeleteState
 {
-	this.state = "delete";
+	constructor()
+	{
+		this.state = "delete";
+	}
 }
 
 SaveDeleteState.prototype.setdelete = function()

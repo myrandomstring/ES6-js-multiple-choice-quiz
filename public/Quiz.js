@@ -1,9 +1,10 @@
-Quiz.prototype.constructor = Quiz;
-
-function Quiz()
+class Quiz
 {
-	this.questions = [];
-	this.current_question_index = -1;
+	constructor()
+	{	
+		this.questions = [];
+		this.current_question_index = -1;
+	}
 }
 
 Quiz.prototype.addquestion = function(question)

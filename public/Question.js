@@ -1,8 +1,9 @@
-Question.prototype.constructor = Question;
-
-function Question(rows)
+class Question
 {
-	this.questiontable = new QuestionTable(rows);
+	constructor(rows)
+	{
+		this.questiontable = new QuestionTable(rows);
+	}
 }
 
 Question.prototype.markquestion = async function()

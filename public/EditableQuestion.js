@@ -1,6 +1,7 @@
-EditableQuestion.prototype.constructor = EditableQuestion;
-
-function EditableQuestion(rows)
+class EditableQuestion
 {
-	this.questiontable = new EditableQuestionTable(rows);
+	constructor(rows)
+	{
+		this.questiontable = new EditableQuestionTable(rows);
+	}
 }

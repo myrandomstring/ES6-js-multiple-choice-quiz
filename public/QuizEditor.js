@@ -1,9 +1,10 @@
-QuizEditor.prototype.constructor = QuizEditor;
-
-function QuizEditor()
+class QuizEditor
 {
-	this.questions = [];
-	this.current_question_index = -1;
+	constructor()
+	{
+		this.questions = [];
+		this.current_question_index = -1;
+	}
 }
 
 QuizEditor.prototype.addquestion = function(question)
