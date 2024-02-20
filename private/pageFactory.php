@@ -44,20 +44,20 @@ class PageFactory
         return $page;
     }    
 
-	public static function consumePage($page)
-	{
-		$pagename = get_class($page);
-		
-		if (self::isSerializable($pagename)) 
-		{
-			self::serializePage($page);
-		}
-	}
+    public static function consumePage($page)
+    {
+        $pagename = get_class($page);
+        
+        if (self::isSerializable($pagename)) 
+        {
+            self::serializePage($page);
+        }
+    }
 
-	private static function isSerializable($pagename)
-	{
+    private static function isSerializable($pagename)
+    {
         return (isset(class_implements($pagename)['Serializable']) || array_key_exists("serializeObjectTrait",class_uses($pagename))) ? true : false;
-	}
+    }
 
 }
 
