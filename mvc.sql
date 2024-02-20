@@ -2,9 +2,9 @@ CREATE DATABASE quiz;
 
 USE quiz;
 
-CREATE user 'user'@'localhost' IDENTIFIED BY 'YOURPASSWORD';
-REVOKE ALL PRIVILEGES ON *.* FROM 'user'@'localhost';
-GRANT EXECUTE ON quiz.* TO 'user'@'localhost';
+CREATE user 'quiz'@'localhost' IDENTIFIED BY '8u3c3ko!';
+REVOKE ALL PRIVILEGES ON *.* FROM 'quiz'@'localhost';
+GRANT EXECUTE ON quiz.* TO 'quiz'@'localhost';
 
 DROP TABLE IF EXISTS questions;
 

@@ -3,14 +3,14 @@ require_once('extDOMImplementation.php');
 
 class App
 {
-	private $doc;
+    private $doc;
 
-	public function __construct()
-	{
-		$extDOMImp = new extDOMImplementation();	
-		$this->doc = $extDOMImp->createDocument();
+    public function __construct()
+    {
+        $extDOMImp = new extDOMImplementation();    
+        $this->doc = $extDOMImp->createDocument();
 
-		$head = $this->doc->appendElement("head");
+        $head = $this->doc->appendElement("head");
 
         $charset = $head->appendElement("meta");
         $charset->setAttributes(["charset"=>"UTF-8"]);
@@ -42,32 +42,32 @@ class App
         $elementwrapper = $head->appendElement("script");
         $elementwrapper->setAttributes(["src"=>"elementwrapper.js"]);
 
-		$onapploadjs = $head->appendElement("script");
-		$onapploadjs->setAttributes(["src"=>"onappload.js"]);
+        $onapploadjs = $head->appendElement("script");
+        $onapploadjs->setAttributes(["src"=>"onappload.js"]);
 
-		$utilitiesjs = $head->appendElement("script");
-		$utilitiesjs->setAttributes(["src"=>"utilities.js"]);
-		
-		$playquizmenujs = $head->appendElement("script");
-		$playquizmenujs->setAttributes(["src"=>"PlayQuizMenu.js"]);
-		
-		$editquizmenujs = $head->appendElement("script");
-		$editquizmenujs->setAttributes(["src"=>"EditQuizMenu.js"]);
-		
-		$applicationjs = $head->appendElement("script");
-		$applicationjs->setAttributes(["src"=>"Application.js"]);
-		
-		$savedeletestatejs = $head->appendElement("script");
-		$savedeletestatejs->setAttributes(["src"=>"SaveDeleteState.js"]);
-		
-		$appcss = $head->appendElement("link",["rel"=>"stylesheet","type"=>"text/css","href"=>"app.css"]);
-	}	
+        $utilitiesjs = $head->appendElement("script");
+        $utilitiesjs->setAttributes(["src"=>"utilities.js"]);
+        
+        $playquizmenujs = $head->appendElement("script");
+        $playquizmenujs->setAttributes(["src"=>"PlayQuizMenu.js"]);
+        
+        $editquizmenujs = $head->appendElement("script");
+        $editquizmenujs->setAttributes(["src"=>"EditQuizMenu.js"]);
+        
+        $applicationjs = $head->appendElement("script");
+        $applicationjs->setAttributes(["src"=>"Application.js"]);
+        
+        $savedeletestatejs = $head->appendElement("script");
+        $savedeletestatejs->setAttributes(["src"=>"SaveDeleteState.js"]);
+        
+        $appcss = $head->appendElement("link",["rel"=>"stylesheet","type"=>"text/css","href"=>"app.css"]);
+    }    
 
-	public function saveHTML()
-	{
-		header("Content-Type:text/html;charset:UTF-8");
-		return "<!DOCTYPE html>\n".$this->doc->saveHTML();
-	}
+    public function saveHTML()
+    {
+        header("Content-Type:text/html;charset:UTF-8");
+        return "<!DOCTYPE html>\n".$this->doc->saveHTML();
+    }
 }
 
 ?>

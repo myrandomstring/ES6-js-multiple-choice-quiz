@@ -1,37 +1,37 @@
 class SaveDeleteState
 {
-	constructor()
-	{
-		this.state = "delete";
-	}
+    constructor()
+    {
+        this.state = "delete";
+    }
 }
 
 SaveDeleteState.prototype.setdelete = function()
 {
-	this.state = "delete";
+    this.state = "delete";
 }
 
 SaveDeleteState.prototype.setsave = function()
 {
-	this.state = "save";
+    this.state = "save";
 }
 
 SaveDeleteState.prototype.isdelete = function()
 {
-	if (this.state == "delete")
-	{
-		return true;
-	}
+    if (this.state == "delete")
+    {
+        return true;
+    }
 
-	return false;
+    return false;
 }
 
 SaveDeleteState.prototype.issave = function()
 {
-	if (this.state == "save")
-	{
-		return true;
-	}
+    if (this.state == "save")
+    {
+        return true;
+    }
 
-	return false;
+    return false;
 }

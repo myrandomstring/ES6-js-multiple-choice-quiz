@@ -11,7 +11,7 @@ function ce(ename,attrs)
 
 function doFetch(pagename,command,params = {})
 {
- 		const f = fetch("controller.php", {
+         const f = fetch("controller.php", {
             'method':'POST',
             'headers': {
                 'Content-Type':"application/json; charset=utf-8"
@@ -19,7 +19,7 @@ function doFetch(pagename,command,params = {})
             'body': JSON.stringify({'request':Object.assign({'pagename':pagename,'command':command},params)})
         });
 
-		return f;
+        return f;
 }
 
 /**

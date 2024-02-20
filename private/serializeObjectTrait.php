@@ -1,21 +1,21 @@
 <?php
 trait serializeObjectTrait
 {
-	public function __serialize()
-	{
+    public function __serialize()
+    {
         $members = get_object_vars($this);
-		return $members;
-	}
+        return $members;
+    }
 
- 	public function __unserialize($data)
-	{
-		foreach($data as $property=>$value)
-		{
-			$this->{$property} = $value;
-		}
-	}
+     public function __unserialize($data)
+    {
+        foreach($data as $property=>$value)
+        {
+            $this->{$property} = $value;
+        }
+    }
 
-	/*
+    /*
     function serialize()
     {
         $members = get_object_vars($this);
@@ -34,6 +34,6 @@ trait serializeObjectTrait
             }
         }
     }
-	*/
+    */
 }
 ?>

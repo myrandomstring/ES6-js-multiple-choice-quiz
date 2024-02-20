@@ -1,7 +1,7 @@
 window.onload = function()
 {
-	Application.createDOM();
-	EditQuizMenu.playquiz();
-	Application.loadquizeditor();
-	Application.renderfooter();
+    Application.createDOM();
+    EditQuizMenu.playquiz();
+    Application.loadquizeditor();
+    Application.renderfooter();
 }
