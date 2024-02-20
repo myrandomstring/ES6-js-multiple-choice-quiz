@@ -16,7 +16,7 @@ try
             $pagename = $request["pagename"];    
             $page = PageFactory::producePage($pagename);
             $page->handleRequest($request);    
-            PageFactory::serializePage($page);
+            PageFactory::consumePage($page);
             $page->sendresponse();
         }
     }

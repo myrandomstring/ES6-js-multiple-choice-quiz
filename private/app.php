@@ -31,7 +31,7 @@ class App
         $editablequestionjs->setAttributes(["src"=>"EditableQuestion.js"]);
 
         $tablejs = $head->appendElement("script");
-        $tablejs->setAttributes(["src"=>"table.js"]);
+        $tablejs->setAttributes(["src"=>"Table.js"]);
 
         $questiontablejs = $head->appendElement("script");
         $questiontablejs->setAttributes(["src"=>"QuestionTable.js"]);

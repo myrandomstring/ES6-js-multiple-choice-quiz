@@ -35,7 +35,7 @@ class PageFactory
             $page = new $pagename();
             
             // PHP<7.4 uses Serializable interface later versions use __magic methods
-            if (isset(class_implements($pagename)['Serializable']) || array_key_exists("serializeObjectTrait",class_uses($page)))
+            if (self::isSerializable($pagename)) 
             {
                 self::serializePage($page);
             }
@@ -43,6 +43,22 @@ class PageFactory
 
         return $page;
     }    
+
+	public static function consumePage($page)
+	{
+		$pagename = get_class($page);
+		
+		if (self::isSerializable($pagename)) 
+		{
+			self::serializePage($page);
+		}
+	}
+
+	private static function isSerializable($pagename)
+	{
+        return (isset(class_implements($pagename)['Serializable']) || array_key_exists("serializeObjectTrait",class_uses($pagename))) ? true : false;
+	}
+
 }
 
 ?>
