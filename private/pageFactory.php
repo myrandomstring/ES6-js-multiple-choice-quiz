@@ -53,8 +53,8 @@ class PageFactory
             self::serializePage($page);
         }
     
-		$page->sendresponse();
-	}
+        $page->sendresponse();
+    }
 
     private static function isSerializable($pagename)
     {
